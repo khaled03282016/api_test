@@ -2,9 +2,11 @@ import os
 from flask import Flask, request, jsonify, url_for, session, escape
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 app.secret_key = 'eCommerce'
 
 app.config ["MONGO_DBNAME"] = "eCommerce_shop"
@@ -29,5 +31,4 @@ def get_products ():
 
 
 if __name__ == '__main__': 
-     port=port=int(os.environ.get('PORT',5000))
-     app.run(host='0.0.0.0', port=port, debug=True)
+     app.run(debug=True)
