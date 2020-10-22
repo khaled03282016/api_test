@@ -28,4 +28,4 @@ def get_products ():
 
 
 if __name__ == '__main__': 
-    app.run( debug=True)
+    app.run(host="ka-api-test-deploy.herokuapp.com", debug=True)
